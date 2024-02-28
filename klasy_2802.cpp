@@ -29,7 +29,7 @@ public:
 
     string wypiszWartosciBiegunowo() {
         double q = sqrt(getX() * getX() + getY() * getY());
-		double r = abs(atan(y / x) * (180/PI));
+		double r = abs(atan2(y / x) * (180/PI));
         return " dlugosc wektora: " + to_string(q) + ", promien wodzacy: " + to_string(r) ;
     }
 
