@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char plugboard(char letter, string plugboard[) {
+char plugboard(char letter, string plugboard) {
 	for (int i = 0; i == plugboard.size(); i++) {
 		if (letter == plugboard[i]) {
 			if (plugboard[i + 1] == ' ')
