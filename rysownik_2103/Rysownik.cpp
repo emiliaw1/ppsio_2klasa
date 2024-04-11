@@ -1,39 +1,64 @@
+#include "rysownik.h"
 #include <iostream>
-#include <cmath>
-#include "Rysownik.h"
+#include <Windows.h>
+#include <math.h>
 
 using namespace std;
 
-struct Point {
-    int x;
-    int y;
-};
 
-void Rysownik::RysujProstokat(Point pos, Point size, int kolor, int wypelnienie)
+void gotoxy(int x, int y)
 {
-    int size = ;
-    for (int i = 0; i < size.x; i++) {
-        for (int j = 0; j < size.y; j++) {
-            if (i == 0 || i == size.x - 1 || j == 0 || j == size.y - 1)
-                cout << char(177);
-            else
-                cout << char(219);
-        }
-        cout << endl;
-  }
+	COORD coord = { x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-void Rysownik::RysujKolo(Point pos, Point r, int kolor, int wypelnienie)
+void zmienKolor(int color)
 {
-   
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
-int main() {
-    RysujKolo(size);
-    return 0;
+void rysownik::rysujProstokat(pos position, s size, int kolor, int wypelnienie)
+{
+	zmienKolor(kolor);
+	for (int i = 0; i < size.x; i++)
+	{
+		gotoxy(position.x, position.y + i);
+		for (int j = 0; j < size.y; j++)
+		{
+			if (wypelnienie == 0)
+			{
+				cout << char(177);
+			}
+			else
+			{
+				cout << char(219);
+			}
+				
+		}
+	}
 }
 
+void rysownik::rysujKolo(pos position, int r, int kolor, int wypelnienie)
+{
+	zmienKolor(kolor);
+	for (int i = position.x - r; i <= position.x + r; i++)
+	{
+		for (int j = position.y - r; j <= position.y + r; j++)
+		{
+			if ((i - position.x) * (i - position.x) + (j - position.y) * (j - position.y) <= r * r)
+			{
+				gotoxy(i, j);
 
-
-
+				if (wypelnienie == 0)
+				{
+					cout << char(177);
+				}
+				else
+				{
+					cout << char(219);
+				}
+			}
+		}
+	}
+}
 
