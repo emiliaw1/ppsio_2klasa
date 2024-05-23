@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class Wektor {
+	float x;
+	float y;
+	friend void wyswietlPolar(Wektor&, ostream& os, istream& oi) {
+		float r = sqrt(os.x * os.y * oi.x * oi.y);
+		float atan
+	}
+	friend void wyswietlKat(Wektor&) {
+
+	}
+
+public:
+	Wektor(float x, float y) {
+		this->x = x;
+		this->y = y;
+	}
+	friend ostream& operator<<(ostream& os, const Wektor& os);
+	friend istream& operator<<(istream& oi, const Wektor& oi);
+	Wektor operator <<(Wektor const&, float const x); {
+		this->x = x;
+		this->y = y;
+		return is;
+	}
+	Wektor operator >>(float n); {
+		this->x = x;
+		this->y = y;
+		return is;
+	}
+	Wektor operator *=(float n); {
+		this->x = x;
+		this->y = y;
+		return is;
+	}
+	Wektor operator /=(float n); {
+		this->x = ;
+		this->y = ;
+		return is;
+	}
+	Wektor operator ++(float n); {
+		this->x++;
+		this->y++;
+		return is;
+	}
+	Wektor operator --(float n); {
+		this->x--;
+			this->y--;
+		return is;
+	}
+
+};
+
+int main() {
+	return 0;
+}
